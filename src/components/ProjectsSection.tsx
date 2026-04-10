@@ -10,7 +10,7 @@ const projects = [
     image: project1,
     title: "RUMAH MODERN MINIMALIS",
     location: "MEDAN, 2024",
-    price: "Rp\u00a0990.000.000",
+    price: "Rp\u00a0899.000.000",
     desc: "Rumah tinggal 2 lantai dengan desain modern minimalis, luas bangunan 180 m²",
   },
   {
