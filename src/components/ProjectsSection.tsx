@@ -26,9 +26,9 @@ const projects: Project[] = [
   },
   {
     images: [project2, project2a, project2b, project2c],
-    title: "RUKO KOMERSIAL",
+    title: "MODERN HOUSE",
     location: "PADANG, 2023",
-    price: "Rp\u00a02.100.000.000",
+    price: "Rp\u00a05XX.XXX.XXX",
     desc: "Ruko 3 lantai untuk area bisnis strategis, luas bangunan 300 m²",
   },
   {
