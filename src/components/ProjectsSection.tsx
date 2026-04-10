@@ -11,7 +11,7 @@ const projects = [
     title: "RUMAH MODERN MINIMALIS",
     location: "MEDAN, 2024",
     price: "Rp\u00a0899.000.000",
-    desc: "Rumah tinggal 2 lantai dengan desain modern minimalis, luas bangunan 180 m²",
+    desc: "Rumah dengan design modern minimalist, luas bangunan 240 m² dengan nuansa taman yang luas mendedikasikan kenyamanan keluarga",
   },
   {
     image: project2,
