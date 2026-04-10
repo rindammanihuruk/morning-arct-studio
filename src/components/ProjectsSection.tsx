@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "MODERN HOUSE",
     location: "",
     price: "Rp\u00a05XX.XXX.XXX",
-    desc: "Ruko 3 lantai untuk area bisnis strategis, luas bangunan 300 m²",
+    desc: "Rumah bukan hanya sekedar tempat untuk pulang, rumah menjadi wajah dari sebuah kegigihan dan keamanan bagi keluarga. Luas tanah dan lokasi tidak menjadi penghambat dalam kerangka kerja design dan struktur untuk berdiri",
   },
   {
     images: [project3],
