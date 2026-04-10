@@ -10,7 +10,7 @@ const projects = [
     image: project1,
     title: "SCANDINAVIAN PRIVATE HOUSE",
     location: "PANGKALAN KERINCI (GG. TETANIC), 2025",
-    price: "Rp\u00a0899.000.000",
+    price: "Rp\u00a08XX.XXX.XXX",
     desc: "Rumah dengan design modern minimalist, luas bangunan 240 m² dengan nuansa taman yang luas mendedikasikan kenyamanan keluarga",
   },
   {
