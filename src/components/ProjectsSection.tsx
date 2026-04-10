@@ -1,27 +1,38 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { ChevronDown } from "lucide-react";
+import { useRef, useState } from "react";
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
+import project2a from "@/assets/project-2a.jpg";
+import project2b from "@/assets/project-2b.jpg";
+import project2c from "@/assets/project-2c.jpg";
 import project3 from "@/assets/project-3.jpg";
 
-const projects = [
+interface Project {
+  images: string[];
+  title: string;
+  location: string;
+  price: string;
+  desc: string;
+}
+
+const projects: Project[] = [
   {
-    image: project1,
+    images: [project1],
     title: "SCANDINAVIAN PRIVATE HOUSE",
     location: "PANGKALAN KERINCI (GG. TETANIC), 2025",
     price: "Rp\u00a08XX.XXX.XXX",
     desc: "Rumah dengan design modern minimalist, luas bangunan 240 m² dengan nuansa taman yang luas mendedikasikan kenyamanan keluarga",
   },
   {
-    image: project2,
+    images: [project2, project2a, project2b, project2c],
     title: "RUKO KOMERSIAL",
     location: "PADANG, 2023",
     price: "Rp\u00a02.100.000.000",
     desc: "Ruko 3 lantai untuk area bisnis strategis, luas bangunan 300 m²",
   },
   {
-    image: project3,
+    images: [project3],
     title: "VILLA TROPIS",
     location: "BUKITTINGGI, 2023",
     price: "Rp\u00a01.500.000.000",
@@ -29,7 +40,71 @@ const projects = [
   },
 ];
 
-const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+const ImageSlider = ({ images, title }: { images: string[]; title: string }) => {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+
+  if (images.length === 1) {
+    return (
+      <img
+        src={images[0]}
+        alt={title}
+        loading="lazy"
+        width={1920}
+        height={1080}
+        className="w-full h-[60vh] object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    );
+  }
+
+  return (
+    <div className="relative w-full h-[60vh]">
+      {images.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          alt={`${title} - ${i + 1}`}
+          loading="lazy"
+          width={1920}
+          height={1080}
+          className={`absolute inset-0 w-full h-[60vh] object-cover transition-opacity duration-500 ${
+            i === current ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+      <button
+        onClick={prev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors"
+        aria-label="Previous image"
+      >
+        <ChevronLeft size={20} />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors"
+        aria-label="Next image"
+      >
+        <ChevronRight size={20} />
+      </button>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              i === current ? "bg-background w-6" : "bg-background/50"
+            }`}
+            aria-label={`Go to image ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -43,17 +118,10 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
     >
       <div className="relative overflow-hidden">
         <div className="relative overflow-hidden h-[60vh]">
-          <img
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-            width={1920}
-            height={1080}
-            className="w-full h-[60vh] object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+          <ImageSlider images={project.images} title={project.title} />
         </div>
-        <div className="absolute inset-0 bg-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="absolute bottom-6 right-6 bg-background/90 backdrop-blur-sm px-5 py-3">
+        <div className="absolute inset-0 bg-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="absolute bottom-6 right-6 bg-background/90 backdrop-blur-sm px-5 py-3 pointer-events-none">
           <span className="text-lg font-medium">{project.price}</span>
         </div>
       </div>
