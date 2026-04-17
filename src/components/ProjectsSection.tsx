@@ -2,10 +2,11 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project2a from "@/assets/project-2a.jpg";
-import project2b from "@/assets/project-2b.jpg";
-import project2c from "@/assets/project-2c.jpg";
+import modernHouse1 from "@/assets/modern-house-1.jpg";
+import modernHouse2 from "@/assets/modern-house-2.jpg";
+import modernHouse3 from "@/assets/modern-house-3.jpg";
+import modernHouse4 from "@/assets/modern-house-4.jpg";
+import modernHouse5 from "@/assets/modern-house-5.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project3a from "@/assets/project-3a.jpg";
 import project3b from "@/assets/project-3b.jpg";
@@ -28,7 +29,7 @@ const projects: Project[] = [
     desc: "Rumah dengan design modern minimalist, luas bangunan 240 m² dengan nuansa taman yang luas mendedikasikan kenyamanan keluarga",
   },
   {
-    images: [project2, project2a, project2b, project2c],
+    images: [modernHouse1, modernHouse2, modernHouse3, modernHouse4, modernHouse5],
     title: "MODERN HOUSE",
     location: "",
     price: "Rp\u00a05XX.XXX.XXX",
