@@ -36,9 +36,9 @@ const projects: Project[] = [
   },
   {
     images: [project3overview, project3, project3a, project3b],
-    title: "VILLA TROPIS",
-    location: "BUKITTINGGI, 2023",
-    price: "Rp\u00a01.500.000.000",
+    title: "KITCHEN SET",
+    location: "PEKAN BARU, 2025",
+    price: "Rp\u00a08X.XXX.XXX",
     desc: "Villa dengan sentuhan tropis modern, memanfaatkan pemandangan alam Bukittinggi, 250 m²",
   },
 ];
