@@ -39,7 +39,7 @@ const projects: Project[] = [
     title: "KITCHEN SET",
     location: "PEKAN BARU, 2025",
     price: "Rp\u00a08X.XXX.XXX",
-    desc: "Villa dengan sentuhan tropis modern, memanfaatkan pemandangan alam Bukittinggi, 250 m²",
+    desc: "Kitchen set modern dengan kombinasi material kayu natural, marmer, dan finishing glossy yang elegan. Dilengkapi kabinet atas-bawah, area memasak, kulkas built-in, serta zona laundry terintegrasi. Membutuhkan ruang minimum 2,3 m x 6 m untuk hasil yang optimal.",
   },
 ];
 
