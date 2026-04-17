@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
   { label: "PORTOFOLIO", href: "#work" },
@@ -24,8 +25,13 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 h-14 flex items-center justify-between">
-        <a href="#" className={`text-minimal font-semibold tracking-[0.3em] ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-          ARCH STUDIO
+        <a href="#" className={`flex items-center gap-3 text-minimal font-semibold tracking-[0.2em] ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+          <img
+            src={logo}
+            alt="Morning Arct Studio logo"
+            className={`h-9 w-9 object-contain transition-all duration-300 ${scrolled ? "" : "invert brightness-0"}`}
+          />
+          MORNING ARCT STUDIO
         </a>
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
