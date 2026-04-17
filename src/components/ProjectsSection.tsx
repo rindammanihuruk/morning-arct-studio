@@ -9,6 +9,7 @@ import project2c from "@/assets/project-2c.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project3a from "@/assets/project-3a.jpg";
 import project3b from "@/assets/project-3b.jpg";
+import project3overview from "@/assets/project-3-overview.jpg";
 
 interface Project {
   images: string[];
@@ -34,7 +35,7 @@ const projects: Project[] = [
     desc: "Rumah bukan hanya sekedar tempat untuk pulang, rumah menjadi wajah dari sebuah kegigihan dan keamanan bagi keluarga. Luas tanah dan lokasi tidak menjadi penghambat dalam kerangka kerja design dan struktur untuk berdiri",
   },
   {
-    images: [project3, project3a, project3b],
+    images: [project3overview, project3, project3a, project3b],
     title: "VILLA TROPIS",
     location: "BUKITTINGGI, 2023",
     price: "Rp\u00a01.500.000.000",
