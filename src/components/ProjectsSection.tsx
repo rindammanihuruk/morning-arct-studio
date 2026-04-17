@@ -62,7 +62,7 @@ const ImageSlider = ({ images, title }: { images: string[]; title: string }) => 
   }
 
   return (
-    <div className="relative w-full h-[60vh]">
+    <div className="relative w-full h-[60vh] bg-muted">
       {images.map((img, i) => (
         <img
           key={i}
@@ -71,7 +71,7 @@ const ImageSlider = ({ images, title }: { images: string[]; title: string }) => 
           loading="lazy"
           width={1920}
           height={1080}
-          className={`absolute inset-0 w-full h-[60vh] object-cover transition-opacity duration-500 ${
+          className={`absolute inset-0 w-full h-[60vh] object-contain transition-opacity duration-500 ${
             i === current ? "opacity-100" : "opacity-0"
           }`}
         />
