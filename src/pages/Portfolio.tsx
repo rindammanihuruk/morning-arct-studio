@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import ProjectsSection from "@/components/ProjectsSection";
+import ProjectsGrid from "@/components/ProjectsGrid";
+import InspirationGallery from "@/components/InspirationGallery";
 import ContactSection from "@/components/ContactSection";
 
 const Portfolio = () => {
@@ -47,7 +48,8 @@ const Portfolio = () => {
           </div>
         </header>
 
-        <ProjectsSection />
+        <ProjectsGrid />
+        <InspirationGallery />
         <ContactSection />
 
         <a
