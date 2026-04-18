@@ -30,7 +30,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Morning Arct Studio logo"
-            className={`h-9 w-9 object-contain transition-all duration-300 ${scrolled ? "" : "invert brightness-0"}`}
+            className="h-9 w-9 object-contain transition-all duration-300"
           />
           MORNING ARCT STUDIO
         </Link>
