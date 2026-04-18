@@ -3,6 +3,7 @@ import { MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import ProgressGallery from "@/components/ProgressGallery";
 import InspirationGallery from "@/components/InspirationGallery";
 import ContactSection from "@/components/ContactSection";
 
@@ -51,6 +52,7 @@ const Portfolio = () => {
 
         <ProjectsGrid />
         <FeaturedProjects />
+        <ProgressGallery />
         <InspirationGallery />
         <ContactSection />
 
