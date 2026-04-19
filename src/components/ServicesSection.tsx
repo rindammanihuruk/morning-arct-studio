@@ -1,42 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
-
-const packages = [
-  {
-    num: "01",
-    type: "Type 36",
-    price: "Rp 200 Juta",
-    tagline: "Sederhana & Fungsional",
-    desc: "Rumah mungil yang efisien — 2 kamar tidur, ruang tamu lapang, dan dapur fungsional. Cocok untuk pasangan atau keluarga kecil.",
-    features: ["2 Kamar Tidur", "1 Kamar Mandi", "Carport Terbuka", "Luas Bangunan ±36m²"],
-  },
-  {
-    num: "02",
-    type: "Type 45",
-    price: "Rp 300 Juta",
-    tagline: "Lebih Lega & Modern",
-    desc: "Tambahan ruang dan finishing yang lebih rapi. 2–3 kamar tidur, teras lebih nyaman, dan area servis terpisah.",
-    features: ["2–3 Kamar Tidur", "2 Kamar Mandi", "Teras Depan", "Luas Bangunan ±45m²"],
-  },
-  {
-    num: "03",
-    type: "Type 60",
-    price: "Rp 400 Juta",
-    tagline: "Nyaman dengan Carport",
-    desc: "Ruang lebih luas, 3 kamar tidur, desain minimalis elegan dengan aksen kayu. Cocok untuk keluarga kecil-menengah.",
-    features: ["3 Kamar Tidur", "2 Kamar Mandi", "Carport Tertutup", "Luas Bangunan ±60m²"],
-  },
-  {
-    num: "04",
-    type: "Type 70–80",
-    price: "Rp 500 Juta",
-    tagline: "Mewah & Premium",
-    desc: "Desain elegan, material berkualitas, taman/teras luas. 3+ kamar tidur dengan nuansa premium meskipun satu lantai.",
-    features: ["3+ Kamar Tidur", "3 Kamar Mandi", "Taman & Teras Luas", "Material Premium"],
-  },
-];
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { packages } from "@/data/packages";
 
 const services = [
   {
@@ -147,33 +114,52 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="grid md:grid-cols-2 gap-12 bg-foreground text-background p-8 md:p-16"
+              className="grid md:grid-cols-2 bg-foreground text-background overflow-hidden"
             >
-              <div>
+              <div className="aspect-[4/3] md:aspect-auto overflow-hidden bg-muted">
+                <img
+                  src={packages[activePkg].image}
+                  alt={`${packages[activePkg].type} ${packages[activePkg].tagline}`}
+                  width={1600}
+                  height={1067}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-8 md:p-12 flex flex-col">
                 <p className="text-minimal opacity-60 mb-4">PAKET {packages[activePkg].num}</p>
                 <h4 className="text-3xl md:text-5xl font-light mb-4">{packages[activePkg].tagline}</h4>
-                <p className="text-2xl md:text-3xl font-light opacity-80 mb-8">{packages[activePkg].price}</p>
-                <p className="opacity-70 leading-relaxed mb-8 max-w-md">{packages[activePkg].desc}</p>
-                <a
-                  href="https://wa.me/628116314114"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm border-b border-background/40 pb-1 hover:border-background transition-colors"
-                >
-                  Konsultasi Paket Ini <ArrowUpRight size={16} />
-                </a>
-              </div>
-              <div className="space-y-px">
-                <p className="text-minimal opacity-60 mb-6">SPESIFIKASI</p>
-                {packages[activePkg].features.map((f, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between py-4 border-t border-background/20"
+                <p className="text-2xl md:text-3xl font-light opacity-80 mb-6">{packages[activePkg].price}</p>
+                <p className="opacity-70 leading-relaxed mb-8 max-w-md">{packages[activePkg].shortDesc}</p>
+
+                <div className="space-y-px mb-8">
+                  {packages[activePkg].features.map((f, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-between py-3 border-t border-background/20"
+                    >
+                      <span className="opacity-80 text-sm">{f}</span>
+                      <span className="text-minimal opacity-40">{String(i + 1).padStart(2, "0")}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-auto flex flex-wrap items-center gap-x-8 gap-y-4">
+                  <Link
+                    to={`/paket/${packages[activePkg].slug}`}
+                    className="inline-flex items-center gap-2 text-sm border-b border-background pb-1 hover:gap-3 transition-all"
                   >
-                    <span className="opacity-80">{f}</span>
-                    <span className="text-minimal opacity-40">{String(i + 1).padStart(2, "0")}</span>
-                  </div>
-                ))}
+                    Lihat paket lengkap <ArrowRight size={16} />
+                  </Link>
+                  <a
+                    href={`https://wa.me/628116314114?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20${encodeURIComponent(packages[activePkg].type)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm border-b border-background/40 pb-1 hover:border-background transition-colors"
+                  >
+                    Konsultasi <ArrowUpRight size={16} />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
