@@ -1,6 +1,42 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+
+const packages = [
+  {
+    num: "01",
+    type: "Type 36",
+    price: "Rp 200 Juta",
+    tagline: "Sederhana & Fungsional",
+    desc: "Rumah mungil yang efisien — 2 kamar tidur, ruang tamu lapang, dan dapur fungsional. Cocok untuk pasangan atau keluarga kecil.",
+    features: ["2 Kamar Tidur", "1 Kamar Mandi", "Carport Terbuka", "Luas Bangunan ±36m²"],
+  },
+  {
+    num: "02",
+    type: "Type 45",
+    price: "Rp 300 Juta",
+    tagline: "Lebih Lega & Modern",
+    desc: "Tambahan ruang dan finishing yang lebih rapi. 2–3 kamar tidur, teras lebih nyaman, dan area servis terpisah.",
+    features: ["2–3 Kamar Tidur", "2 Kamar Mandi", "Teras Depan", "Luas Bangunan ±45m²"],
+  },
+  {
+    num: "03",
+    type: "Type 60",
+    price: "Rp 400 Juta",
+    tagline: "Nyaman dengan Carport",
+    desc: "Ruang lebih luas, 3 kamar tidur, desain minimalis elegan dengan aksen kayu. Cocok untuk keluarga kecil-menengah.",
+    features: ["3 Kamar Tidur", "2 Kamar Mandi", "Carport Tertutup", "Luas Bangunan ±60m²"],
+  },
+  {
+    num: "04",
+    type: "Type 70–80",
+    price: "Rp 500 Juta",
+    tagline: "Mewah & Premium",
+    desc: "Desain elegan, material berkualitas, taman/teras luas. 3+ kamar tidur dengan nuansa premium meskipun satu lantai.",
+    features: ["3+ Kamar Tidur", "3 Kamar Mandi", "Taman & Teras Luas", "Material Premium"],
+  },
+];
 
 const services = [
   {
