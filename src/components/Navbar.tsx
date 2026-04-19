@@ -56,7 +56,7 @@ const Navbar = () => {
             alt="Morning Arct Studio logo"
             className="h-9 w-9 object-contain transition-all duration-300"
           />
-          <span className="hidden sm:inline">MORNING ARCT STUDIO</span>
+          <span className="text-[10px] sm:text-xs whitespace-nowrap">MORNING ARCT STUDIO</span>
         </Link>
 
         {/* Desktop nav */}
