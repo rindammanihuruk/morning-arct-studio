@@ -36,19 +36,30 @@ const ContactSection = () => {
                 <div>
                   <h4 className="text-minimal text-muted-foreground mb-2">EMAIL</h4>
                   <a
-                    href="mailto:hello@archstudio.id"
+                    href="mailto:rindammanihuruk@gmail.com"
                     className="text-xl hover:text-muted-foreground transition-colors duration-300"
                   >
-                    hello@archstudio.id
+                    rindammanihuruk@gmail.com
                   </a>
                 </div>
                 <div>
-                  <h4 className="text-minimal text-muted-foreground mb-2">STUDIO</h4>
-                  <address className="text-xl not-italic">
-                    Jl. Gatot Subroto No. 88
-                    <br />
-                    Medan, Sumatera Utara 20112
-                  </address>
+                  <h4 className="text-minimal text-muted-foreground mb-4">STUDIO</h4>
+                  <div className="space-y-4 text-lg not-italic">
+                    <address className="not-italic">
+                      <span className="text-minimal text-muted-foreground block mb-1">PANGKALAN KERINCI</span>
+                      Jl. Pemda Komp. Pesona Kerinci No. 24A
+                    </address>
+                    <address className="not-italic">
+                      <span className="text-minimal text-muted-foreground block mb-1">MEDAN</span>
+                      Jl. Penerbangan Komp. Perhubungan No. 2
+                    </address>
+                    <address className="not-italic">
+                      <span className="text-minimal text-muted-foreground block mb-1">DKI JAKARTA</span>
+                      Green Pramuka City, Tower Pino 07/MF
+                      <br />
+                      Jl. Ahmad Yani Kav. 49, Jakarta Pusat
+                    </address>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -61,11 +72,13 @@ const ContactSection = () => {
               <div>
                 <h4 className="text-minimal text-muted-foreground mb-6">IKUTI KAMI</h4>
                 <div className="space-y-4">
-                  <a href="#" className="block text-xl hover:text-muted-foreground transition-colors duration-300">
-                    Instagram
-                  </a>
-                  <a href="#" className="block text-xl hover:text-muted-foreground transition-colors duration-300">
-                    LinkedIn
+                  <a
+                    href="https://instagram.com/morning_arct.studio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-xl hover:text-muted-foreground transition-colors duration-300"
+                  >
+                    Instagram — @morning_arct.studio
                   </a>
                 </div>
               </div>

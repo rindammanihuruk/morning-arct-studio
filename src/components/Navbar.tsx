@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
@@ -12,12 +13,30 @@ const navLinks = [
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  const linkBaseClass = `text-minimal transition-colors duration-300 ${
+    scrolled
+      ? "text-muted-foreground hover:text-foreground"
+      : "text-primary-foreground/70 hover:text-primary-foreground"
+  }`;
 
   return (
     <nav
@@ -26,28 +45,75 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 h-14 flex items-center justify-between">
-        <Link to="/" className={`flex items-center gap-3 text-minimal font-semibold tracking-[0.2em] ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+        <Link
+          to="/"
+          className={`flex items-center gap-3 text-minimal font-semibold tracking-[0.2em] ${
+            scrolled ? "text-foreground" : "text-primary-foreground"
+          }`}
+        >
           <img
             src={logo}
             alt="Morning Arct Studio logo"
             className="h-9 w-9 object-contain transition-all duration-300"
           />
-          MORNING ARCT STUDIO
+          <span className="hidden sm:inline">MORNING ARCT STUDIO</span>
         </Link>
+
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => {
-            const className = `text-minimal transition-colors duration-300 ${
-              scrolled
-                ? "text-muted-foreground hover:text-foreground"
-                : "text-primary-foreground/70 hover:text-primary-foreground"
-            }`;
             const isRoute = link.href.startsWith("/") && !link.href.startsWith("/#");
             return isRoute ? (
-              <Link key={link.label} to={link.href} className={className}>
+              <Link key={link.label} to={link.href} className={linkBaseClass}>
                 {link.label}
               </Link>
             ) : (
-              <a key={link.label} href={link.href} className={className}>
+              <a key={link.label} href={link.href} className={linkBaseClass}>
+                {link.label}
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setMobileOpen((v) => !v)}
+          className={`md:hidden p-2 -mr-2 transition-colors ${
+            scrolled ? "text-foreground" : "text-primary-foreground"
+          }`}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+        >
+          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {/* Mobile menu panel */}
+      <div
+        className={`md:hidden overflow-hidden bg-background border-b border-border transition-[max-height,opacity] duration-500 ease-in-out ${
+          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="container mx-auto px-6 py-6 flex flex-col gap-5">
+          {navLinks.map((link) => {
+            const isRoute = link.href.startsWith("/") && !link.href.startsWith("/#");
+            const cls = "text-minimal text-foreground hover:text-muted-foreground transition-colors";
+            return isRoute ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className={cls}
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className={cls}
+                onClick={() => setMobileOpen(false)}
+              >
                 {link.label}
               </a>
             );
