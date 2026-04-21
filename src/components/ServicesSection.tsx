@@ -111,7 +111,7 @@ const ServicesSection = () => {
               ))}
             </motion.div>
 
-            {/* Active package detail */}
+            <p className="text-sm text-muted-foreground mb-4">Klik tombol di atas untuk melihat tipe lainnya</p>
             <motion.div
               key={activePkg}
               initial={{ opacity: 0, y: 20 }}
