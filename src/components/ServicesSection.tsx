@@ -90,28 +90,35 @@ const ServicesSection = () => {
               initial={{ opacity: 0 }}
               animate={isPkgInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8"
+              className="flex flex-col md:grid md:grid-cols-4 gap-3 md:gap-4 mb-8"
             >
               {packages.map((p, i) => (
                 <button
                   key={p.num}
                   onClick={() => setActivePkg(i)}
-                  className={`relative p-5 md:p-6 text-left border transition-all duration-500 group ${
+                  aria-pressed={activePkg === i}
+                  className={`relative w-full p-5 md:p-6 text-left border-2 rounded-sm transition-all duration-500 group ${
                     activePkg === i
-                      ? "bg-foreground text-background border-foreground shadow-lg -translate-y-1"
-                      : "bg-background text-foreground border-border hover:border-foreground/60 hover:-translate-y-0.5"
+                      ? "bg-foreground text-background border-foreground shadow-xl md:-translate-y-1"
+                      : "bg-background text-foreground border-border hover:border-foreground/60 md:hover:-translate-y-0.5"
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <span className="text-minimal opacity-60">{p.num}</span>
+                  <div className="flex items-center justify-between md:block">
+                    <div className="flex items-center gap-4 md:block">
+                      <span className="text-minimal opacity-60 md:mb-3 md:block">{p.num}</span>
+                      <div>
+                        <div className="text-xl md:text-xl font-light leading-tight">{p.type}</div>
+                        <div className="text-base md:text-base font-semibold mt-1">{p.price}</div>
+                      </div>
+                    </div>
                     <span
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        activePkg === i ? "bg-background" : "bg-foreground/20 group-hover:bg-foreground/60"
+                      className={`shrink-0 w-3 h-3 rounded-full ml-4 transition-all md:absolute md:top-5 md:right-5 ${
+                        activePkg === i
+                          ? "bg-background ring-2 ring-background/30"
+                          : "bg-foreground/20 group-hover:bg-foreground/60"
                       }`}
                     />
                   </div>
-                  <div className="text-lg md:text-xl font-light mb-1">{p.type}</div>
-                  <div className="text-sm md:text-base font-medium opacity-90">{p.price}</div>
                 </button>
               ))}
             </motion.div>
