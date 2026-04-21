@@ -71,16 +71,17 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isPkgInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+              className="mb-16 text-center max-w-4xl mx-auto"
             >
-              <div>
-                <h2 className="text-minimal text-muted-foreground mb-4">PAKET PEMBANGUNAN</h2>
-                <h3 className="text-3xl md:text-5xl font-light text-architectural max-w-2xl">
-                  Empat budget, empat rasa.
-                </h3>
-              </div>
-              <p className="text-muted-foreground text-sm md:text-base max-w-md leading-relaxed">
-                Setiap paket adalah titik awal — kami menyesuaikan denah dan material berdasarkan kebutuhan keluarga dan kondisi tanah.
+              <h2 className="text-minimal text-muted-foreground mb-6">PAKET PEMBANGUNAN</h2>
+              <h3 className="text-4xl md:text-7xl font-light text-architectural leading-[1.05] mb-6">
+                Empat budget,
+                <br />
+                <span className="italic text-muted-foreground">empat rasa.</span>
+              </h3>
+              <div className="w-12 h-px bg-foreground/40 mx-auto mb-6" />
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+                Empat paket, satu kualitas terbaik — setiap titik awal kami sesuaikan dengan kebutuhan keluarga dan kondisi tanah Anda.
               </p>
             </motion.div>
 
@@ -89,21 +90,28 @@ const ServicesSection = () => {
               initial={{ opacity: 0 }}
               animate={isPkgInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mb-px"
+              className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8"
             >
               {packages.map((p, i) => (
                 <button
                   key={p.num}
                   onClick={() => setActivePkg(i)}
-                  className={`p-6 text-left transition-all duration-500 ${
+                  className={`relative p-5 md:p-6 text-left border transition-all duration-500 group ${
                     activePkg === i
-                      ? "bg-foreground text-background"
-                      : "bg-background text-foreground hover:bg-accent/10"
+                      ? "bg-foreground text-background border-foreground shadow-lg -translate-y-1"
+                      : "bg-background text-foreground border-border hover:border-foreground/60 hover:-translate-y-0.5"
                   }`}
                 >
-                  <div className="text-minimal opacity-60 mb-2">{p.num}</div>
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-minimal opacity-60">{p.num}</span>
+                    <span
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        activePkg === i ? "bg-background" : "bg-foreground/20 group-hover:bg-foreground/60"
+                      }`}
+                    />
+                  </div>
                   <div className="text-lg md:text-xl font-light mb-1">{p.type}</div>
-                  <div className="text-sm md:text-base font-medium">{p.price}</div>
+                  <div className="text-sm md:text-base font-medium opacity-90">{p.price}</div>
                 </button>
               ))}
             </motion.div>
