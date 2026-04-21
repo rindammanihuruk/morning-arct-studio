@@ -85,39 +85,27 @@ const ServicesSection = () => {
               </p>
             </motion.div>
 
-            {/* Price tabs */}
+            {/* Price tabs - Compact */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={isPkgInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col md:grid md:grid-cols-4 gap-3 md:gap-4 mb-8"
+              className="flex flex-wrap gap-2 mb-6"
             >
               {packages.map((p, i) => (
                 <button
                   key={p.num}
                   onClick={() => setActivePkg(i)}
                   aria-pressed={activePkg === i}
-                  className={`relative w-full p-5 md:p-6 text-left border-2 rounded-sm transition-all duration-500 group ${
+                  className={`relative px-4 py-2 text-left border rounded-sm transition-all duration-300 ${
                     activePkg === i
-                      ? "bg-foreground text-background border-foreground shadow-xl md:-translate-y-1"
-                      : "bg-background text-foreground border-border hover:border-foreground/60 md:hover:-translate-y-0.5"
+                      ? "bg-foreground text-background border-foreground shadow-lg"
+                      : "bg-background text-foreground border-border hover:border-foreground/50"
                   }`}
                 >
-                  <div className="flex items-center justify-between md:block">
-                    <div className="flex items-center gap-4 md:block">
-                      <span className="text-minimal opacity-60 md:mb-3 md:block">{p.num}</span>
-                      <div>
-                        <div className="text-xl md:text-xl font-light leading-tight">{p.type}</div>
-                        <div className="text-base md:text-base font-semibold mt-1">{p.price}</div>
-                      </div>
-                    </div>
-                    <span
-                      className={`shrink-0 w-3 h-3 rounded-full ml-4 transition-all md:absolute md:top-5 md:right-5 ${
-                        activePkg === i
-                          ? "bg-background ring-2 ring-background/30"
-                          : "bg-foreground/20 group-hover:bg-foreground/60"
-                      }`}
-                    />
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs opacity-50">{p.num}</span>
+                    <span className="text-sm font-medium">{p.type}</span>
                   </div>
                 </button>
               ))}
