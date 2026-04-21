@@ -129,51 +129,56 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="grid md:grid-cols-2 bg-foreground text-background overflow-hidden"
+              className="bg-foreground text-background overflow-hidden"
             >
-              <div className="aspect-[4/3] md:aspect-auto overflow-hidden bg-muted">
+              {/* Image - Full width at top */}
+              <div className="w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-muted">
                 <img
                   src={packages[activePkg].image}
                   alt={`${packages[activePkg].type} ${packages[activePkg].tagline}`}
                   width={1600}
-                  height={1067}
+                  height={700}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-8 md:p-12 flex flex-col">
-                <p className="text-minimal opacity-60 mb-4">PAKET {packages[activePkg].num}</p>
-                <h4 className="text-3xl md:text-5xl font-light mb-4">{packages[activePkg].tagline}</h4>
-                <p className="text-2xl md:text-3xl font-light opacity-80 mb-6">{packages[activePkg].price}</p>
-                <p className="opacity-70 leading-relaxed mb-8 max-w-md">{packages[activePkg].shortDesc}</p>
 
-                <div className="space-y-px mb-8">
-                  {packages[activePkg].features.map((f, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between py-3 border-t border-background/20"
-                    >
-                      <span className="opacity-80 text-sm">{f}</span>
-                      <span className="text-minimal opacity-40">{String(i + 1).padStart(2, "0")}</span>
-                    </div>
-                  ))}
+              {/* Info - Below image */}
+              <div className="p-6 md:p-10">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                  <div className="flex-1">
+                    <p className="text-minimal opacity-60 mb-2">PAKET {packages[activePkg].num}</p>
+                    <h4 className="text-2xl md:text-4xl font-light mb-2">{packages[activePkg].tagline}</h4>
+                    <p className="text-xl md:text-2xl font-light opacity-80">{packages[activePkg].price}</p>
+                  </div>
+                  <p className="opacity-70 leading-relaxed max-w-md md:text-right">{packages[activePkg].shortDesc}</p>
                 </div>
 
-                <div className="mt-auto flex flex-wrap items-center gap-x-8 gap-y-4">
-                  <Link
-                    to={`/paket/${packages[activePkg].slug}`}
-                    className="inline-flex items-center gap-2 text-sm border-b border-background pb-1 hover:gap-3 transition-all"
-                  >
-                    Lihat paket lengkap <ArrowRight size={16} />
-                  </Link>
-                  <a
-                    href={`https://wa.me/628116314114?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20${encodeURIComponent(packages[activePkg].type)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm border-b border-background/40 pb-1 hover:border-background transition-colors"
-                  >
-                    Konsultasi <ArrowUpRight size={16} />
-                  </a>
+                <div className="mt-6 pt-6 border-t border-background/20 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex flex-wrap gap-x-6 gap-y-2">
+                    {packages[activePkg].features.slice(0, 4).map((f, i) => (
+                      <span key={i} className="text-sm opacity-80 flex items-center gap-2">
+                        <span className="w-1 h-1 bg-background/60 rounded-full"></span>
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-6">
+                    <Link
+                      to={`/paket/${packages[activePkg].slug}`}
+                      className="inline-flex items-center gap-2 text-sm border-b border-background pb-1 hover:gap-3 transition-all"
+                    >
+                      Lihat lengkap <ArrowRight size={16} />
+                    </Link>
+                    <a
+                      href={`https://wa.me/628116314114?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20${encodeURIComponent(packages[activePkg].type)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm border-b border-background/40 pb-1 hover:border-background transition-colors"
+                    >
+                      Konsultasi <ArrowUpRight size={16} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
