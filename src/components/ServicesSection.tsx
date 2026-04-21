@@ -34,39 +34,39 @@ const ServicesSection = () => {
   const [activePkg, setActivePkg] = useState(0);
 
   return (
-    <section id="services" className="py-32 bg-background">
+    <section id="services" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto" ref={ref}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="mb-10 md:mb-20"
           >
-            <h2 className="text-minimal text-muted-foreground mb-4">SERVICES</h2>
-            <h3 className="text-4xl md:text-6xl font-light text-architectural">Layanan Kami</h3>
+            <h2 className="text-minimal text-muted-foreground mb-3">SERVICES</h2>
+            <h3 className="text-3xl md:text-6xl font-light text-architectural">Layanan Kami</h3>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-12">
             {services.map((s, i) => (
               <motion.div
                 key={s.num}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 * (i + 1) }}
-                className="group border-t border-border pt-8"
+                className="group border-t border-border pt-5 md:pt-8"
               >
                 <span className="text-minimal text-muted-foreground font-medium">{s.num}</span>
-                <h4 className="text-2xl font-light mt-4 mb-2 text-architectural group-hover:text-muted-foreground transition-colors duration-500">
+                <h4 className="text-xl md:text-2xl font-light mt-2 md:mt-4 mb-1 md:mb-2 text-architectural group-hover:text-muted-foreground transition-colors duration-500">
                   {s.title}
                 </h4>
-                <p className="text-sm font-medium text-muted-foreground mb-4">{s.subtitle}</p>
+                <p className="text-sm font-medium text-muted-foreground mb-2 md:mb-4">{s.subtitle}</p>
                 <p className="text-muted-foreground leading-relaxed text-sm">{s.desc}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Paket Pembangunan sub-section */}
-          <div ref={pkgRef} className="mt-32 pt-20 border-t border-border">
+          <div ref={pkgRef} className="mt-16 md:mt-32 pt-10 md:pt-20 border-t border-border">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isPkgInView ? { opacity: 1, y: 0 } : {}}
