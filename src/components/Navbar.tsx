@@ -103,7 +103,10 @@ const Navbar = () => {
         <div className="container mx-auto px-6 py-6 flex flex-col gap-5">
           {navLinks.map((link) => {
             const isRoute = link.href.startsWith("/") && !link.href.startsWith("/#");
-            const cls = "text-minimal text-foreground hover:text-muted-foreground transition-colors";
+            const isPortfolio = link.label === "PORTOFOLIO";
+            const cls = isPortfolio
+              ? "text-minimal inline-flex w-fit px-4 py-2 rounded-sm bg-foreground text-background hover:bg-foreground/85 transition-colors"
+              : "text-minimal text-foreground hover:text-muted-foreground transition-colors";
             return isRoute ? (
               <Link
                 key={link.label}
