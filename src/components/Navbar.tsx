@@ -38,6 +38,10 @@ const Navbar = () => {
       : "text-primary-foreground/70 hover:text-primary-foreground"
   }`;
 
+  const highlightClass = scrolled
+    ? "text-minimal px-4 py-2 rounded-sm bg-foreground text-background hover:bg-foreground/85 transition-all duration-300 shadow-sm"
+    : "text-minimal px-4 py-2 rounded-sm bg-primary-foreground text-foreground hover:bg-primary-foreground/90 transition-all duration-300 shadow-sm";
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -63,12 +67,14 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => {
             const isRoute = link.href.startsWith("/") && !link.href.startsWith("/#");
+            const isPortfolio = link.label === "PORTOFOLIO";
+            const cls = isPortfolio ? highlightClass : linkBaseClass;
             return isRoute ? (
-              <Link key={link.label} to={link.href} className={linkBaseClass}>
+              <Link key={link.label} to={link.href} className={cls}>
                 {link.label}
               </Link>
             ) : (
-              <a key={link.label} href={link.href} className={linkBaseClass}>
+              <a key={link.label} href={link.href} className={cls}>
                 {link.label}
               </a>
             );
@@ -97,7 +103,10 @@ const Navbar = () => {
         <div className="container mx-auto px-6 py-6 flex flex-col gap-5">
           {navLinks.map((link) => {
             const isRoute = link.href.startsWith("/") && !link.href.startsWith("/#");
-            const cls = "text-minimal text-foreground hover:text-muted-foreground transition-colors";
+            const isPortfolio = link.label === "PORTOFOLIO";
+            const cls = isPortfolio
+              ? "text-minimal inline-flex w-fit px-4 py-2 rounded-sm bg-foreground text-background hover:bg-foreground/85 transition-colors"
+              : "text-minimal text-foreground hover:text-muted-foreground transition-colors";
             return isRoute ? (
               <Link
                 key={link.label}
