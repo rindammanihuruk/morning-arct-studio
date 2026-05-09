@@ -38,6 +38,10 @@ const Navbar = () => {
       : "text-primary-foreground/70 hover:text-primary-foreground"
   }`;
 
+  const highlightClass = scrolled
+    ? "text-minimal px-4 py-2 rounded-sm bg-foreground text-background hover:bg-foreground/85 transition-all duration-300 shadow-sm"
+    : "text-minimal px-4 py-2 rounded-sm bg-primary-foreground text-foreground hover:bg-primary-foreground/90 transition-all duration-300 shadow-sm";
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
