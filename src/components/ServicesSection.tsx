@@ -120,14 +120,12 @@ const ServicesSection = () => {
               className="bg-foreground text-background overflow-hidden"
             >
               {/* Image - Full width at top */}
-              <div className="w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-muted">
+              <div className="w-full bg-muted flex items-center justify-center">
                 <img
                   src={packages[activePkg].image}
                   alt={`${packages[activePkg].type} ${packages[activePkg].tagline}`}
-                  width={1600}
-                  height={700}
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto max-h-[80vh] object-contain"
                 />
               </div>
 
