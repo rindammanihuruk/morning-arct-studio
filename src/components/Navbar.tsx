@@ -81,17 +81,29 @@ const Navbar = () => {
           })}
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setMobileOpen((v) => !v)}
-          className={`md:hidden p-2 -mr-2 transition-colors ${
-            scrolled ? "text-foreground" : "text-primary-foreground"
-          }`}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Mobile: always-visible Portfolio CTA + menu button */}
+        <div className="md:hidden flex items-center gap-2 -mr-2">
+          <Link
+            to="/portfolio"
+            className={`text-[10px] tracking-[0.2em] font-semibold px-3 py-1.5 rounded-sm transition-colors ${
+              scrolled
+                ? "bg-foreground text-background hover:bg-foreground/85"
+                : "bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
+            }`}
+          >
+            PORTOFOLIO
+          </Link>
+          <button
+            onClick={() => setMobileOpen((v) => !v)}
+            className={`p-2 transition-colors ${
+              scrolled ? "text-foreground" : "text-primary-foreground"
+            }`}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu panel */}
