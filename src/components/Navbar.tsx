@@ -67,12 +67,14 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => {
             const isRoute = link.href.startsWith("/") && !link.href.startsWith("/#");
+            const isPortfolio = link.label === "PORTOFOLIO";
+            const cls = isPortfolio ? highlightClass : linkBaseClass;
             return isRoute ? (
-              <Link key={link.label} to={link.href} className={linkBaseClass}>
+              <Link key={link.label} to={link.href} className={cls}>
                 {link.label}
               </Link>
             ) : (
-              <a key={link.label} href={link.href} className={linkBaseClass}>
+              <a key={link.label} href={link.href} className={cls}>
                 {link.label}
               </a>
             );
