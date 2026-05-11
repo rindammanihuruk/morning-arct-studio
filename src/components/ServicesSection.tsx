@@ -1,26 +1,29 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, MessageSquare, PenTool, HardHat, CheckCircle2, Package, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { packages } from "@/data/packages";
 
 const services = [
   {
     num: "01",
-    title: "CONSULTATION",
+    icon: MessageSquare,
+    title: "KONSULTASI",
     subtitle: "Konsultasi & Perencanaan",
     desc: "Konsultasi desain, analisis kelayakan proyek, dan perencanaan anggaran. Kami membantu Anda memahami kebutuhan proyek sejak awal.",
   },
   {
     num: "02",
-    title: "DESIGN",
+    icon: PenTool,
+    title: "DESAIN",
     subtitle: "Desain Arsitektur & Interior",
     desc: "Desain arsitektur, interior, dan pembuatan gambar teknis (DED) yang detail untuk rumah tinggal maupun bangunan komersial.",
   },
   {
     num: "03",
-    title: "CONSTRUCTION",
+    icon: HardHat,
+    title: "KONSTRUKSI",
     subtitle: "Pembangunan & Renovasi",
     desc: "Pembangunan rumah tinggal, bangunan komersial, dan renovasi dengan material berkualitas dan pengerjaan profesional di seluruh Sumatera.",
   },
