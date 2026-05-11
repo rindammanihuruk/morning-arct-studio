@@ -171,7 +171,7 @@ const ServicesSection = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm border-b border-background/40 pb-1 hover:border-background transition-colors"
                     >
-                      Konsultasi <ArrowUpRight size={16} />
+                      <MessageCircle size={14} /> Konsultasi <ArrowUpRight size={16} />
                     </a>
                   </div>
                 </div>
