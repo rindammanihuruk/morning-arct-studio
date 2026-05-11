@@ -1,16 +1,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Search, Users, Lightbulb, Info, Compass, Calendar, Hammer, MapPin } from "lucide-react";
 
 const approaches = [
-  { title: "Riset & Analisis", desc: "Memahami konteks lokasi, budaya, dan kebutuhan klien secara mendalam" },
-  { title: "Kolaborasi", desc: "Kemitraan erat dengan klien, insinyur, dan tukang berpengalaman" },
-  { title: "Inovasi", desc: "Material berkualitas dan solusi desain yang efisien dan berkelanjutan" },
+  { icon: Search, title: "Riset & Analisis", desc: "Memahami konteks lokasi, budaya, dan kebutuhan klien secara mendalam" },
+  { icon: Users, title: "Kolaborasi", desc: "Kemitraan erat dengan klien, insinyur, dan tukang berpengalaman" },
+  { icon: Lightbulb, title: "Inovasi", desc: "Material berkualitas dan solusi desain yang efisien dan berkelanjutan" },
 ];
 
 const stats = [
-  { label: "FOUNDED", value: "2015" },
-  { label: "PROJECTS", value: "200+" },
-  { label: "AREA", value: "Sumatera" },
+  { icon: Calendar, label: "BERDIRI SEJAK", value: "2015" },
+  { icon: Hammer, label: "PROYEK SELESAI", value: "200+" },
+  { icon: MapPin, label: "WILAYAH", value: "Sumatera" },
 ];
 
 const AboutSection = () => {
@@ -27,7 +28,7 @@ const AboutSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-minimal text-muted-foreground mb-4">ABOUT</h2>
+              <h2 className="text-minimal text-muted-foreground mb-4 inline-flex items-center gap-2"><Info size={14} /> TENTANG KAMI</h2>
               <h3 className="text-4xl md:text-6xl font-light text-architectural mb-12">Filosofi Kami</h3>
               <div className="space-y-8">
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -45,24 +46,30 @@ const AboutSection = () => {
               className="space-y-12"
             >
               <div>
-                <h4 className="text-minimal text-muted-foreground mb-6">APPROACH</h4>
+                <h4 className="text-minimal text-muted-foreground mb-6 inline-flex items-center gap-2"><Compass size={14} /> PENDEKATAN KAMI</h4>
                 <div className="space-y-6">
-                  {approaches.map((a) => (
-                    <div key={a.title} className="border-l-2 border-foreground pl-6">
-                      <h5 className="text-lg font-medium mb-2">{a.title}</h5>
-                      <p className="text-muted-foreground">{a.desc}</p>
-                    </div>
-                  ))}
+                  {approaches.map((a) => {
+                    const Icon = a.icon;
+                    return (
+                      <div key={a.title} className="border-l-2 border-foreground pl-6">
+                        <h5 className="text-lg font-medium mb-2 inline-flex items-center gap-2"><Icon size={16} /> {a.title}</h5>
+                        <p className="text-muted-foreground">{a.desc}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <div className="pt-8 border-t border-border">
                 <div className="grid grid-cols-3 gap-8">
-                  {stats.map((s) => (
-                    <div key={s.label}>
-                      <h4 className="text-minimal text-muted-foreground mb-2">{s.label}</h4>
-                      <p className="text-xl">{s.value}</p>
-                    </div>
-                  ))}
+                  {stats.map((s) => {
+                    const Icon = s.icon;
+                    return (
+                      <div key={s.label}>
+                        <h4 className="text-minimal text-muted-foreground mb-2 inline-flex items-center gap-1.5"><Icon size={12} /> {s.label}</h4>
+                        <p className="text-xl">{s.value}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>

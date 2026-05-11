@@ -1,26 +1,29 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, MessageSquare, PenTool, HardHat, CheckCircle2, Package, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { packages } from "@/data/packages";
 
 const services = [
   {
     num: "01",
-    title: "CONSULTATION",
+    icon: MessageSquare,
+    title: "KONSULTASI",
     subtitle: "Konsultasi & Perencanaan",
     desc: "Konsultasi desain, analisis kelayakan proyek, dan perencanaan anggaran. Kami membantu Anda memahami kebutuhan proyek sejak awal.",
   },
   {
     num: "02",
-    title: "DESIGN",
+    icon: PenTool,
+    title: "DESAIN",
     subtitle: "Desain Arsitektur & Interior",
     desc: "Desain arsitektur, interior, dan pembuatan gambar teknis (DED) yang detail untuk rumah tinggal maupun bangunan komersial.",
   },
   {
     num: "03",
-    title: "CONSTRUCTION",
+    icon: HardHat,
+    title: "KONSTRUKSI",
     subtitle: "Pembangunan & Renovasi",
     desc: "Pembangunan rumah tinggal, bangunan komersial, dan renovasi dengan material berkualitas dan pengerjaan profesional di seluruh Sumatera.",
   },
@@ -43,11 +46,13 @@ const ServicesSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-10 md:mb-20"
           >
-            <h2 className="text-minimal text-muted-foreground mb-3">SERVICES</h2>
+            <h2 className="text-minimal text-muted-foreground mb-3 inline-flex items-center gap-2"><Package size={14} /> LAYANAN</h2>
             <h3 className="text-3xl md:text-6xl font-light text-architectural">Layanan Kami</h3>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-12">
-            {services.map((s, i) => (
+            {services.map((s, i) => {
+              const Icon = s.icon;
+              return (
               <motion.div
                 key={s.num}
                 initial={{ opacity: 0, y: 30 }}
@@ -55,14 +60,18 @@ const ServicesSection = () => {
                 transition={{ duration: 0.8, delay: 0.2 * (i + 1) }}
                 className="group border-t border-border pt-5 md:pt-8"
               >
-                <span className="text-minimal text-muted-foreground font-medium">{s.num}</span>
+                <div className="flex items-center justify-between">
+                  <span className="text-minimal text-muted-foreground font-medium">{s.num}</span>
+                  <Icon size={22} className="text-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
                 <h4 className="text-xl md:text-2xl font-light mt-2 md:mt-4 mb-1 md:mb-2 text-architectural group-hover:text-muted-foreground transition-colors duration-500">
                   {s.title}
                 </h4>
                 <p className="text-sm font-medium text-muted-foreground mb-2 md:mb-4">{s.subtitle}</p>
                 <p className="text-muted-foreground leading-relaxed text-sm">{s.desc}</p>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Paket Pembangunan sub-section */}
@@ -73,7 +82,7 @@ const ServicesSection = () => {
               transition={{ duration: 0.8 }}
               className="mb-16 text-center max-w-4xl mx-auto"
             >
-              <h2 className="text-minimal text-muted-foreground mb-6">PAKET PEMBANGUNAN</h2>
+              <h2 className="text-minimal text-muted-foreground mb-6 inline-flex items-center gap-2"><Package size={14} /> PAKET PEMBANGUNAN</h2>
               <h3 className="text-4xl md:text-7xl font-light text-architectural leading-[1.05] mb-6">
                 Empat budget,
                 <br />
@@ -144,7 +153,7 @@ const ServicesSection = () => {
                   <div className="flex flex-wrap gap-x-6 gap-y-2">
                     {packages[activePkg].features.slice(0, 4).map((f, i) => (
                       <span key={i} className="text-sm opacity-80 flex items-center gap-2">
-                        <span className="w-1 h-1 bg-background/60 rounded-full"></span>
+                        <CheckCircle2 size={14} className="opacity-70" />
                         {f}
                       </span>
                     ))}
@@ -162,7 +171,7 @@ const ServicesSection = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm border-b border-background/40 pb-1 hover:border-background transition-colors"
                     >
-                      Konsultasi <ArrowUpRight size={16} />
+                      <MessageCircle size={14} /> Konsultasi <ArrowUpRight size={16} />
                     </a>
                   </div>
                 </div>

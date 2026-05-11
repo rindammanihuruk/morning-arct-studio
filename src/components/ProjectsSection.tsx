@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, MapPin, Tag, Images, FolderOpen } from "lucide-react";
 import project1 from "@/assets/project-1.jpg";
 import modernHouse1 from "@/assets/modern-house-1.jpg";
 import modernHouse2 from "@/assets/modern-house-2.jpg";
@@ -125,19 +125,22 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           <ImageSlider images={project.images} title={project.title} />
         </div>
         <div className="absolute inset-0 bg-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        <div className="absolute bottom-6 right-6 bg-background/90 backdrop-blur-sm px-5 py-3 pointer-events-none">
+        <div className="absolute bottom-6 right-6 bg-background/90 backdrop-blur-sm px-5 py-3 pointer-events-none flex items-center gap-2">
+          <Tag size={14} className="text-muted-foreground" />
           <span className="text-lg font-medium">{project.price}</span>
         </div>
       </div>
       <div className="mt-8 grid md:grid-cols-3 gap-8">
         <div>
           <h4 className="text-2xl font-light text-architectural mb-2">{project.title}</h4>
-          <p className="text-minimal text-muted-foreground">{project.location}</p>
+          {project.location && (
+            <p className="text-minimal text-muted-foreground inline-flex items-center gap-1.5"><MapPin size={12} /> {project.location}</p>
+          )}
         </div>
         <div className="md:col-span-2">
           <p className="text-muted-foreground leading-relaxed mb-4">{project.desc}</p>
           <button className="flex items-center gap-2 text-minimal text-foreground hover:text-muted-foreground transition-colors">
-            ESTIMASI MATERIAL
+            <Images size={14} /> ESTIMASI MATERIAL
             <ChevronDown size={14} className="transition-transform duration-300" />
           </button>
         </div>
@@ -160,7 +163,7 @@ const ProjectsSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <h2 className="text-minimal text-muted-foreground mb-4">SELECTED WORK</h2>
+            <h2 className="text-minimal text-muted-foreground mb-4 inline-flex items-center gap-2"><FolderOpen size={14} /> PROYEK PILIHAN</h2>
             <h3 className="text-4xl md:text-6xl font-light text-architectural">Proyek Kami</h3>
           </motion.div>
           <div className="space-y-24">

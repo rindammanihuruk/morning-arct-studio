@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Building2, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-architecture.jpg";
 
 const HeroSection = () => {
@@ -10,6 +11,15 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 hero-overlay" />
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-foreground/30 text-primary-foreground/90 text-minimal mb-6"
+        >
+          <Building2 size={14} />
+          <span>JASA ARSITEKTUR & KONSTRUKSI</span>
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,8 +45,9 @@ const HeroSection = () => {
           href="https://wa.me/6281271172937"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-primary-foreground text-primary px-8 py-4 text-minimal hover:bg-primary-foreground/90 transition-colors"
+          className="inline-flex items-center gap-2 bg-primary-foreground text-primary px-8 py-4 text-minimal hover:bg-primary-foreground/90 transition-colors"
         >
+          <MessageCircle size={16} />
           KONSULTASI GRATIS VIA WHATSAPP
         </motion.a>
       </div>
