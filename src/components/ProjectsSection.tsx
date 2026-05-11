@@ -163,7 +163,7 @@ const ProjectsSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <h2 className="text-minimal text-muted-foreground mb-4">SELECTED WORK</h2>
+            <h2 className="text-minimal text-muted-foreground mb-4 inline-flex items-center gap-2"><FolderOpen size={14} /> PROYEK PILIHAN</h2>
             <h3 className="text-4xl md:text-6xl font-light text-architectural">Proyek Kami</h3>
           </motion.div>
           <div className="space-y-24">
