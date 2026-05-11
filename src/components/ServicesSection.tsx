@@ -153,7 +153,7 @@ const ServicesSection = () => {
                   <div className="flex flex-wrap gap-x-6 gap-y-2">
                     {packages[activePkg].features.slice(0, 4).map((f, i) => (
                       <span key={i} className="text-sm opacity-80 flex items-center gap-2">
-                        <span className="w-1 h-1 bg-background/60 rounded-full"></span>
+                        <CheckCircle2 size={14} className="opacity-70" />
                         {f}
                       </span>
                     ))}
