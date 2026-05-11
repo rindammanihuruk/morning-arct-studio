@@ -32,7 +32,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          href="https://wa.me/628116314114"
+          href="https://wa.me/6281271172937"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-primary-foreground text-primary px-8 py-4 text-minimal hover:bg-primary-foreground/90 transition-colors"

@@ -173,7 +173,7 @@ const PackageDetail = () => {
                 Mari diskusikan kebutuhan dan kondisi tanah Anda.
               </h2>
               <a
-                href={`https://wa.me/628116314114?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20${encodeURIComponent(
+                href={`https://wa.me/6281271172937?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20${encodeURIComponent(
                   pkg.type
                 )}%20(${encodeURIComponent(pkg.price)})`}
                 target="_blank"
