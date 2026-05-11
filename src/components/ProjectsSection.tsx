@@ -125,14 +125,17 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           <ImageSlider images={project.images} title={project.title} />
         </div>
         <div className="absolute inset-0 bg-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        <div className="absolute bottom-6 right-6 bg-background/90 backdrop-blur-sm px-5 py-3 pointer-events-none">
+        <div className="absolute bottom-6 right-6 bg-background/90 backdrop-blur-sm px-5 py-3 pointer-events-none flex items-center gap-2">
+          <Tag size={14} className="text-muted-foreground" />
           <span className="text-lg font-medium">{project.price}</span>
         </div>
       </div>
       <div className="mt-8 grid md:grid-cols-3 gap-8">
         <div>
           <h4 className="text-2xl font-light text-architectural mb-2">{project.title}</h4>
-          <p className="text-minimal text-muted-foreground">{project.location}</p>
+          {project.location && (
+            <p className="text-minimal text-muted-foreground inline-flex items-center gap-1.5"><MapPin size={12} /> {project.location}</p>
+          )}
         </div>
         <div className="md:col-span-2">
           <p className="text-muted-foreground leading-relaxed mb-4">{project.desc}</p>
