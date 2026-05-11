@@ -140,7 +140,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         <div className="md:col-span-2">
           <p className="text-muted-foreground leading-relaxed mb-4">{project.desc}</p>
           <button className="flex items-center gap-2 text-minimal text-foreground hover:text-muted-foreground transition-colors">
-            ESTIMASI MATERIAL
+            <Images size={14} /> ESTIMASI MATERIAL
             <ChevronDown size={14} className="transition-transform duration-300" />
           </button>
         </div>
