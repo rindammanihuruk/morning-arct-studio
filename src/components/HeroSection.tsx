@@ -45,8 +45,9 @@ const HeroSection = () => {
           href="https://wa.me/6281271172937"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-primary-foreground text-primary px-8 py-4 text-minimal hover:bg-primary-foreground/90 transition-colors"
+          className="inline-flex items-center gap-2 bg-primary-foreground text-primary px-8 py-4 text-minimal hover:bg-primary-foreground/90 transition-colors"
         >
+          <MessageCircle size={16} />
           KONSULTASI GRATIS VIA WHATSAPP
         </motion.a>
       </div>
