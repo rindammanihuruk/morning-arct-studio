@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, MapPin, Tag, Images, FolderOpen } from "lucide-react";
 import project1 from "@/assets/project-1.jpg";
 import modernHouse1 from "@/assets/modern-house-1.jpg";
 import modernHouse2 from "@/assets/modern-house-2.jpg";
