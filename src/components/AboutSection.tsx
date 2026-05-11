@@ -1,16 +1,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Search, Users, Lightbulb, Info, Compass, Calendar, Hammer, MapPin } from "lucide-react";
 
 const approaches = [
-  { title: "Riset & Analisis", desc: "Memahami konteks lokasi, budaya, dan kebutuhan klien secara mendalam" },
-  { title: "Kolaborasi", desc: "Kemitraan erat dengan klien, insinyur, dan tukang berpengalaman" },
-  { title: "Inovasi", desc: "Material berkualitas dan solusi desain yang efisien dan berkelanjutan" },
+  { icon: Search, title: "Riset & Analisis", desc: "Memahami konteks lokasi, budaya, dan kebutuhan klien secara mendalam" },
+  { icon: Users, title: "Kolaborasi", desc: "Kemitraan erat dengan klien, insinyur, dan tukang berpengalaman" },
+  { icon: Lightbulb, title: "Inovasi", desc: "Material berkualitas dan solusi desain yang efisien dan berkelanjutan" },
 ];
 
 const stats = [
-  { label: "FOUNDED", value: "2015" },
-  { label: "PROJECTS", value: "200+" },
-  { label: "AREA", value: "Sumatera" },
+  { icon: Calendar, label: "BERDIRI SEJAK", value: "2015" },
+  { icon: Hammer, label: "PROYEK SELESAI", value: "200+" },
+  { icon: MapPin, label: "WILAYAH", value: "Sumatera" },
 ];
 
 const AboutSection = () => {
