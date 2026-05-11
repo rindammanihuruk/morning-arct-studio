@@ -28,7 +28,7 @@ const AboutSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-minimal text-muted-foreground mb-4">ABOUT</h2>
+              <h2 className="text-minimal text-muted-foreground mb-4 inline-flex items-center gap-2"><Info size={14} /> TENTANG KAMI</h2>
               <h3 className="text-4xl md:text-6xl font-light text-architectural mb-12">Filosofi Kami</h3>
               <div className="space-y-8">
                 <p className="text-lg text-muted-foreground leading-relaxed">
