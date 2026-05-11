@@ -82,7 +82,7 @@ const ServicesSection = () => {
               transition={{ duration: 0.8 }}
               className="mb-16 text-center max-w-4xl mx-auto"
             >
-              <h2 className="text-minimal text-muted-foreground mb-6">PAKET PEMBANGUNAN</h2>
+              <h2 className="text-minimal text-muted-foreground mb-6 inline-flex items-center gap-2"><Package size={14} /> PAKET PEMBANGUNAN</h2>
               <h3 className="text-4xl md:text-7xl font-light text-architectural leading-[1.05] mb-6">
                 Empat budget,
                 <br />
