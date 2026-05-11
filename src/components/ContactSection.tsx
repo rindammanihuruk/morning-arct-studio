@@ -25,21 +25,21 @@ const ContactSection = () => {
                 <div>
                   <h4 className="text-minimal text-muted-foreground mb-2">WHATSAPP</h4>
                   <a
-                    href="https://wa.me/628116314114"
+                    href="https://wa.me/6281271172937"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xl hover:text-muted-foreground transition-colors duration-300"
                   >
-                    +62 811 631 4114
+                    +62 812 7117 2937
                   </a>
                 </div>
                 <div>
                   <h4 className="text-minimal text-muted-foreground mb-2">EMAIL</h4>
                   <a
-                    href="mailto:rindammanihuruk@gmail.com"
+                    href="mailto:afdhalulihsan97@gmail.com"
                     className="text-xl hover:text-muted-foreground transition-colors duration-300"
                   >
-                    rindammanihuruk@gmail.com
+                    afdhalulihsan97@gmail.com
                   </a>
                 </div>
                 <div>
@@ -87,7 +87,7 @@ const ContactSection = () => {
                   Setiap proyek kami mulai dari mendengarkan, memahami visi Anda, dan menerjemahkannya menjadi ruang yang melebihi ekspektasi.
                 </p>
                 <a
-                  href="https://wa.me/628116314114?text=Halo%20ARCH%20STUDIO%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek."
+                  href="https://wa.me/6281271172937?text=Halo%20ARCH%20STUDIO%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-foreground text-background px-8 py-4 text-minimal hover:opacity-80 transition-opacity"

@@ -157,7 +157,7 @@ const ServicesSection = () => {
                       Lihat lengkap <ArrowRight size={16} />
                     </Link>
                     <a
-                      href={`https://wa.me/628116314114?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20${encodeURIComponent(packages[activePkg].type)}`}
+                      href={`https://wa.me/6281271172937?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20${encodeURIComponent(packages[activePkg].type)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm border-b border-background/40 pb-1 hover:border-background transition-colors"
