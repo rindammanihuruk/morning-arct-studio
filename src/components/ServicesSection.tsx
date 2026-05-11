@@ -46,11 +46,13 @@ const ServicesSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-10 md:mb-20"
           >
-            <h2 className="text-minimal text-muted-foreground mb-3">SERVICES</h2>
+            <h2 className="text-minimal text-muted-foreground mb-3 inline-flex items-center gap-2"><Package size={14} /> LAYANAN</h2>
             <h3 className="text-3xl md:text-6xl font-light text-architectural">Layanan Kami</h3>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-12">
-            {services.map((s, i) => (
+            {services.map((s, i) => {
+              const Icon = s.icon;
+              return (
               <motion.div
                 key={s.num}
                 initial={{ opacity: 0, y: 30 }}
@@ -58,14 +60,18 @@ const ServicesSection = () => {
                 transition={{ duration: 0.8, delay: 0.2 * (i + 1) }}
                 className="group border-t border-border pt-5 md:pt-8"
               >
-                <span className="text-minimal text-muted-foreground font-medium">{s.num}</span>
+                <div className="flex items-center justify-between">
+                  <span className="text-minimal text-muted-foreground font-medium">{s.num}</span>
+                  <Icon size={22} className="text-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
                 <h4 className="text-xl md:text-2xl font-light mt-2 md:mt-4 mb-1 md:mb-2 text-architectural group-hover:text-muted-foreground transition-colors duration-500">
                   {s.title}
                 </h4>
                 <p className="text-sm font-medium text-muted-foreground mb-2 md:mb-4">{s.subtitle}</p>
                 <p className="text-muted-foreground leading-relaxed text-sm">{s.desc}</p>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Paket Pembangunan sub-section */}
