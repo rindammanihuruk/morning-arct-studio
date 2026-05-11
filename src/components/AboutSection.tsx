@@ -46,24 +46,30 @@ const AboutSection = () => {
               className="space-y-12"
             >
               <div>
-                <h4 className="text-minimal text-muted-foreground mb-6">APPROACH</h4>
+                <h4 className="text-minimal text-muted-foreground mb-6 inline-flex items-center gap-2"><Compass size={14} /> PENDEKATAN KAMI</h4>
                 <div className="space-y-6">
-                  {approaches.map((a) => (
-                    <div key={a.title} className="border-l-2 border-foreground pl-6">
-                      <h5 className="text-lg font-medium mb-2">{a.title}</h5>
-                      <p className="text-muted-foreground">{a.desc}</p>
-                    </div>
-                  ))}
+                  {approaches.map((a) => {
+                    const Icon = a.icon;
+                    return (
+                      <div key={a.title} className="border-l-2 border-foreground pl-6">
+                        <h5 className="text-lg font-medium mb-2 inline-flex items-center gap-2"><Icon size={16} /> {a.title}</h5>
+                        <p className="text-muted-foreground">{a.desc}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <div className="pt-8 border-t border-border">
                 <div className="grid grid-cols-3 gap-8">
-                  {stats.map((s) => (
-                    <div key={s.label}>
-                      <h4 className="text-minimal text-muted-foreground mb-2">{s.label}</h4>
-                      <p className="text-xl">{s.value}</p>
-                    </div>
-                  ))}
+                  {stats.map((s) => {
+                    const Icon = s.icon;
+                    return (
+                      <div key={s.label}>
+                        <h4 className="text-minimal text-muted-foreground mb-2 inline-flex items-center gap-1.5"><Icon size={12} /> {s.label}</h4>
+                        <p className="text-xl">{s.value}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
