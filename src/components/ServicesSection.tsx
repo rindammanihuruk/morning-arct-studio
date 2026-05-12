@@ -108,8 +108,8 @@ const ServicesSection = () => {
                   aria-pressed={activePkg === i}
                   className={`relative px-4 py-2 text-left border rounded-sm transition-all duration-300 ${
                     activePkg === i
-                      ? "bg-foreground text-background border-foreground shadow-lg"
-                      : "bg-background text-foreground border-border hover:border-foreground/50"
+                      ? "bg-clay text-accent-foreground border-clay shadow-warm"
+                      : "bg-background text-foreground border-border hover:border-clay/60"
                   }`}
                 >
                   <div className="flex items-center gap-2">
