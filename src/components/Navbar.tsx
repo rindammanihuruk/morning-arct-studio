@@ -48,23 +48,26 @@ const Navbar = () => {
         scrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="container mx-auto px-6 h-14 flex items-center justify-between gap-4">
         <Link
           to="/"
-          className={`flex items-center gap-3 text-minimal font-semibold tracking-[0.2em] ${
+          className={`flex items-center gap-2 md:gap-3 text-minimal font-semibold tracking-[0.2em] min-w-0 ${
             scrolled ? "text-foreground" : "text-primary-foreground"
           }`}
         >
           <img
             src={logo}
             alt="Morning Arct Studio logo"
-            className="h-9 w-9 object-contain transition-all duration-300"
+            className="h-9 w-9 shrink-0 object-contain transition-all duration-300"
           />
-          <span className="text-[10px] sm:text-xs whitespace-nowrap">MORNING ARCT STUDIO</span>
+          <span className="hidden sm:inline text-[10px] lg:text-xs whitespace-nowrap truncate">
+            <span className="lg:hidden">MORNING ARCT</span>
+            <span className="hidden lg:inline">MORNING ARCT STUDIO</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-5 lg:gap-10 shrink-0">
           {navLinks.map((link) => {
             const isRoute = link.href.startsWith("/") && !link.href.startsWith("/#");
             const isPortfolio = link.label === "PORTOFOLIO";

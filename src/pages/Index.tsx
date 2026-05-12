@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
+import LeadCaptureModal from "@/components/LeadCaptureModal";
 import { MessageCircle } from "lucide-react";
 
 const Index = () => {
@@ -30,6 +31,7 @@ const Index = () => {
         >
           <MessageCircle size={22} />
         </a>
+        <LeadCaptureModal />
       </div>
     </motion.div>
   );
