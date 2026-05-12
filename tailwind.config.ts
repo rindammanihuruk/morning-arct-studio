@@ -13,7 +13,15 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
+        clay: "hsl(var(--clay))",
+        "clay-soft": "hsl(var(--clay-soft))",
+        olive: "hsl(var(--olive))",
+        sand: "hsl(var(--sand))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

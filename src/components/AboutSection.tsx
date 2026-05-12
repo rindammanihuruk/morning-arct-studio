@@ -29,7 +29,7 @@ const AboutSection = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-minimal text-muted-foreground mb-4 inline-flex items-center gap-2"><Info size={14} /> TENTANG KAMI</h2>
-              <h3 className="text-4xl md:text-6xl font-light text-architectural mb-12">Filosofi Kami</h3>
+              <h3 className="text-4xl md:text-6xl font-display font-light text-architectural mb-12">Filosofi <span className="italic text-clay">Kami</span></h3>
               <div className="space-y-8">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Kami percaya bahwa setiap bangunan harus mencerminkan kebutuhan penghuninya sekaligus menghormati lingkungan sekitar. Praktik kami fokus pada terciptanya ruang yang fungsional, estetis, dan tahan lama.

@@ -15,7 +15,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-foreground/30 text-primary-foreground/90 text-minimal mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-clay/90 text-accent-foreground text-minimal mb-8 shadow-soft"
         >
           <Building2 size={14} />
           <span>JASA ARSITEKTUR & KONSTRUKSI</span>
@@ -24,17 +24,17 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-light text-primary-foreground text-architectural mb-8"
+          className="font-display text-6xl md:text-8xl lg:text-[10rem] font-light text-primary-foreground text-architectural mb-8"
         >
-          BUILD YOUR
+          Build Your
           <br />
-          DREAM
+          <span className="italic text-clay-soft">Dream</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-xl md:text-2xl text-primary-foreground/80 font-light tracking-wide max-w-2xl mx-auto mb-10"
+          className="text-lg md:text-xl text-primary-foreground/85 font-light tracking-wide max-w-2xl mx-auto mb-10"
         >
           Konsultasi, desain, dan konstruksi berkualitas tinggi di seluruh Sumatera
         </motion.p>
@@ -45,7 +45,7 @@ const HeroSection = () => {
           href="https://wa.me/6281271172937"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-primary-foreground text-primary px-8 py-4 text-minimal hover:bg-primary-foreground/90 transition-colors"
+          className="inline-flex items-center gap-2 bg-clay text-accent-foreground px-8 py-4 text-minimal hover:bg-clay/90 transition-all shadow-warm hover:shadow-soft hover:-translate-y-0.5"
         >
           <MessageCircle size={16} />
           KONSULTASI GRATIS VIA WHATSAPP

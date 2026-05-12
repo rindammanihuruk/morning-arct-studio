@@ -47,7 +47,7 @@ const ServicesSection = () => {
             className="mb-10 md:mb-20"
           >
             <h2 className="text-minimal text-muted-foreground mb-3 inline-flex items-center gap-2"><Package size={14} /> LAYANAN</h2>
-            <h3 className="text-3xl md:text-6xl font-light text-architectural">Layanan Kami</h3>
+            <h3 className="text-3xl md:text-6xl font-display font-light text-architectural">Layanan <span className="italic text-clay">Kami</span></h3>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-12">
             {services.map((s, i) => {
@@ -83,10 +83,10 @@ const ServicesSection = () => {
               className="mb-16 text-center max-w-4xl mx-auto"
             >
               <h2 className="text-minimal text-muted-foreground mb-6 inline-flex items-center gap-2"><Package size={14} /> PAKET PEMBANGUNAN</h2>
-              <h3 className="text-4xl md:text-7xl font-light text-architectural leading-[1.05] mb-6">
+              <h3 className="text-4xl md:text-7xl font-display font-light text-architectural leading-[1.05] mb-6">
                 Empat budget,
                 <br />
-                <span className="italic text-muted-foreground">empat rasa.</span>
+                <span className="italic text-clay">empat rasa.</span>
               </h3>
               <div className="w-12 h-px bg-foreground/40 mx-auto mb-6" />
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl mx-auto">
@@ -108,8 +108,8 @@ const ServicesSection = () => {
                   aria-pressed={activePkg === i}
                   className={`relative px-4 py-2 text-left border rounded-sm transition-all duration-300 ${
                     activePkg === i
-                      ? "bg-foreground text-background border-foreground shadow-lg"
-                      : "bg-background text-foreground border-border hover:border-foreground/50"
+                      ? "bg-clay text-accent-foreground border-clay shadow-warm"
+                      : "bg-background text-foreground border-border hover:border-clay/60"
                   }`}
                 >
                   <div className="flex items-center gap-2">

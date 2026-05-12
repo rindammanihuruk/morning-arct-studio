@@ -15,11 +15,11 @@ const ContactSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-minimal text-muted-foreground mb-4">GET IN TOUCH</h2>
-              <h3 className="text-4xl md:text-6xl font-light text-architectural mb-12">
+              <h2 className="text-minimal text-clay mb-4">GET IN TOUCH</h2>
+              <h3 className="text-4xl md:text-6xl font-display font-light text-architectural mb-12">
                 Mari Wujudkan
                 <br />
-                Proyek Anda
+                <span className="italic text-clay">Proyek Anda</span>
               </h3>
               <div className="space-y-8">
                 <div>
@@ -90,7 +90,7 @@ const ContactSection = () => {
                   href="https://wa.me/6281271172937?text=Halo%20ARCH%20STUDIO%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-foreground text-background px-8 py-4 text-minimal hover:opacity-80 transition-opacity"
+                  className="inline-flex items-center gap-2 bg-clay text-accent-foreground px-8 py-4 text-minimal hover:bg-clay/90 transition-all shadow-warm hover:-translate-y-0.5"
                 >
                   KONSULTASI VIA WHATSAPP
                 </a>
