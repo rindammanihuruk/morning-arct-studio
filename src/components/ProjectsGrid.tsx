@@ -80,7 +80,7 @@ const ProjectsGrid = () => {
             className="mb-12"
           >
             <h2 className="text-minimal text-muted-foreground mb-4">SELECTED WORK</h2>
-            <h3 className="text-4xl md:text-5xl font-light text-architectural">Proyek Kami</h3>
+            <h3 className="text-4xl md:text-5xl font-display font-light text-architectural">Proyek Kami</h3>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {tiles.map((t, i) => (

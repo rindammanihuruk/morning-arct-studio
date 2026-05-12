@@ -47,7 +47,7 @@ const ServicesSection = () => {
             className="mb-10 md:mb-20"
           >
             <h2 className="text-minimal text-muted-foreground mb-3 inline-flex items-center gap-2"><Package size={14} /> LAYANAN</h2>
-            <h3 className="text-3xl md:text-6xl font-light text-architectural">Layanan Kami</h3>
+            <h3 className="text-3xl md:text-6xl font-display font-light text-architectural">Layanan Kami</h3>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-12">
             {services.map((s, i) => {
@@ -83,7 +83,7 @@ const ServicesSection = () => {
               className="mb-16 text-center max-w-4xl mx-auto"
             >
               <h2 className="text-minimal text-muted-foreground mb-6 inline-flex items-center gap-2"><Package size={14} /> PAKET PEMBANGUNAN</h2>
-              <h3 className="text-4xl md:text-7xl font-light text-architectural leading-[1.05] mb-6">
+              <h3 className="text-4xl md:text-7xl font-display font-light text-architectural leading-[1.05] mb-6">
                 Empat budget,
                 <br />
                 <span className="italic text-muted-foreground">empat rasa.</span>

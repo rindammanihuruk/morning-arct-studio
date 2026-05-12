@@ -57,7 +57,7 @@ const PackageDetail = () => {
                   <span>{pkg.type}</span>
                   <span>{pkg.price}</span>
                 </div>
-                <h1 className="text-4xl md:text-7xl font-light text-architectural leading-[1.05]">
+                <h1 className="text-4xl md:text-7xl font-display font-light text-architectural leading-[1.05]">
                   {pkg.tagline}.
                 </h1>
                 <p className="mt-6 text-lg text-muted-foreground max-w-xl">
@@ -128,7 +128,7 @@ const PackageDetail = () => {
                 <p className="text-minimal text-muted-foreground">Spesifikasi</p>
               </div>
               <div className="md:col-span-9">
-                <h2 className="text-3xl md:text-5xl font-light text-architectural mb-10">
+                <h2 className="text-3xl md:text-5xl font-display font-light text-architectural mb-10">
                   Detail teknis.
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-x-12">
@@ -151,7 +151,7 @@ const PackageDetail = () => {
                 <p className="text-minimal text-muted-foreground">Material & Finishing</p>
               </div>
               <div className="md:col-span-9">
-                <h2 className="text-3xl md:text-5xl font-light text-architectural mb-10">
+                <h2 className="text-3xl md:text-5xl font-display font-light text-architectural mb-10">
                   Pilihan material standar paket.
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-px bg-border">

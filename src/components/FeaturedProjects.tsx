@@ -188,7 +188,7 @@ const FeaturedProjects = () => {
             className="mb-12 max-w-2xl"
           >
             <h2 className="text-minimal text-muted-foreground mb-4">FEATURED WORK</h2>
-            <h3 className="text-4xl md:text-5xl font-light text-architectural mb-4">
+            <h3 className="text-4xl md:text-5xl font-display font-light text-architectural mb-4">
               Proyek Terbangun
             </h3>
             <p className="text-muted-foreground leading-relaxed">

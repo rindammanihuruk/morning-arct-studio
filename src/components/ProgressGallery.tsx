@@ -85,7 +85,7 @@ const ProgressGallery = () => {
             className="mb-12 max-w-2xl"
           >
             <h2 className="text-minimal text-muted-foreground mb-4">ON SITE</h2>
-            <h3 className="text-4xl md:text-5xl font-light text-architectural mb-4">
+            <h3 className="text-4xl md:text-5xl font-display font-light text-architectural mb-4">
               Sedang Dibangun
             </h3>
             <p className="text-muted-foreground leading-relaxed">
