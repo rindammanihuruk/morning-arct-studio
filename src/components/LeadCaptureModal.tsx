@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const STORAGE_KEY = "lead_form_submitted_v2";
-const WHATSAPP_NUMBER = "6281271172937";
 
 const leadSchema = z.object({
   name: z.string().trim().min(2, "Nama minimal 2 karakter").max(100, "Nama terlalu panjang"),
@@ -44,7 +44,7 @@ const LeadCaptureModal = () => {
     };
   }, [stage]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = leadSchema.safeParse(form);
     if (!result.success) {
@@ -58,15 +58,14 @@ const LeadCaptureModal = () => {
     }
     setSubmitting(true);
     const { name, phone, email, area } = result.data;
-    const text = `Halo Morning Arct Studio, saya ingin konsultasi:%0A%0ANama: ${encodeURIComponent(
-      name,
-    )}%0ANo HP: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(
-      email,
-    )}%0ADaerah pembangunan: ${encodeURIComponent(area)}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    const { error } = await supabase.from("leads").insert({ name, phone, email, area });
+    if (error) {
+      toast.error("Gagal menyimpan data. Silakan coba lagi.");
+      setSubmitting(false);
+      return;
+    }
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...result.data, ts: Date.now() }));
-    toast.success("Terima kasih! Selamat menjelajah.");
-    window.open(url, "_blank", "noopener,noreferrer");
+    toast.success("Terima kasih! Data Anda tersimpan. Selamat menjelajah.");
     setSubmitting(false);
     setStage("done");
   };
