@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const STORAGE_KEY = "lead_form_submitted_v2";
-const WHATSAPP_NUMBER = "6281271172937";
 
 const leadSchema = z.object({
   name: z.string().trim().min(2, "Nama minimal 2 karakter").max(100, "Nama terlalu panjang"),
