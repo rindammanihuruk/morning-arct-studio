@@ -44,7 +44,7 @@ const LeadCaptureModal = () => {
     };
   }, [stage]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = leadSchema.safeParse(form);
     if (!result.success) {
@@ -58,15 +58,14 @@ const LeadCaptureModal = () => {
     }
     setSubmitting(true);
     const { name, phone, email, area } = result.data;
-    const text = `Halo Morning Arct Studio, saya ingin konsultasi:%0A%0ANama: ${encodeURIComponent(
-      name,
-    )}%0ANo HP: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(
-      email,
-    )}%0ADaerah pembangunan: ${encodeURIComponent(area)}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    const { error } = await supabase.from("leads").insert({ name, phone, email, area });
+    if (error) {
+      toast.error("Gagal menyimpan data. Silakan coba lagi.");
+      setSubmitting(false);
+      return;
+    }
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...result.data, ts: Date.now() }));
-    toast.success("Terima kasih! Selamat menjelajah.");
-    window.open(url, "_blank", "noopener,noreferrer");
+    toast.success("Terima kasih! Data Anda tersimpan. Selamat menjelajah.");
     setSubmitting(false);
     setStage("done");
   };
