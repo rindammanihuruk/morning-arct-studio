@@ -60,7 +60,7 @@ const Navbar = () => {
             alt="Morning Arct Studio logo"
             className="h-9 w-9 shrink-0 object-contain transition-all duration-300"
           />
-          <span className="hidden sm:flex flex-col leading-[1.05] text-[9px] lg:text-[11px]">
+          <span className="flex flex-col leading-[1.05] text-[9px] sm:text-[10px] lg:text-[11px] truncate">
             <span>MORNING</span>
             <span>ARCT STUDIO</span>
           </span>
