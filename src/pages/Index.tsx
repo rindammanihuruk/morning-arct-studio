@@ -33,6 +33,7 @@ const Index = () => {
           <MessageCircle size={22} />
         </a>
         <LeadCaptureModal />
+        <IndustrialSplash />
       </div>
     </motion.div>
   );
