@@ -60,7 +60,7 @@ const ProgressCard = ({ item, index }: { item: ProgressItem; index: number }) =>
       />
       <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-2 py-1 text-[10px] tracking-[0.15em]">
         <HardHat size={11} />
-        IN PROGRESS
+        DOCUMENTATION
       </div>
       <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-foreground/80 via-foreground/0 to-foreground/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <span className="text-primary-foreground text-sm font-medium">{item.project}</span>
