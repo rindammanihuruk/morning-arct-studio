@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { Building2, MessageCircle } from "lucide-react";
-import heroImage from "@/assets/hero-dark-elegant.jpg.asset.json";
+import heroImage from "@/assets/hero-dark-elegant.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-foreground bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage.url})` }}
+        style={{ backgroundImage: `url(${heroImage})` }}
       />
       <div className="absolute inset-0 hero-overlay" />
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
