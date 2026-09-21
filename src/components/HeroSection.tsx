@@ -42,7 +42,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          href="https://wa.me/6281271172937"
+          href="https://wa.me/628116314114"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-clay text-accent-foreground px-8 py-4 text-minimal hover:bg-clay/90 transition-all shadow-warm hover:shadow-soft hover:-translate-y-0.5"
