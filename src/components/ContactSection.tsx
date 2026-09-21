@@ -23,24 +23,43 @@ const ContactSection = () => {
               </h3>
               <div className="space-y-8">
                 <div>
-                  <h4 className="text-minimal text-muted-foreground mb-2">WHATSAPP</h4>
-                  <a
-                    href="https://wa.me/6281271172937"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xl hover:text-muted-foreground transition-colors duration-300"
-                  >
-                    +62 812 7117 2937
-                  </a>
-                </div>
-                <div>
-                  <h4 className="text-minimal text-muted-foreground mb-2">EMAIL</h4>
-                  <a
-                    href="mailto:afdhalulihsan97@gmail.com"
-                    className="text-xl hover:text-muted-foreground transition-colors duration-300"
-                  >
-                    afdhalulihsan97@gmail.com
-                  </a>
+                  <h4 className="text-minimal text-muted-foreground mb-4">KONTAK</h4>
+                  <div className="space-y-6">
+                    <div>
+                      <p className="text-lg">Rindam M</p>
+                      <a
+                        href="https://wa.me/628116314114"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-muted-foreground hover:text-foreground transition-colors duration-300"
+                      >
+                        +62 811 6314 114
+                      </a>
+                      <a
+                        href="mailto:rindammanihuruk@gmail.com"
+                        className="block text-muted-foreground hover:text-foreground transition-colors duration-300"
+                      >
+                        rindammanihuruk@gmail.com
+                      </a>
+                    </div>
+                    <div>
+                      <p className="text-lg">Angga T</p>
+                      <a
+                        href="https://wa.me/6282169994505"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-muted-foreground hover:text-foreground transition-colors duration-300"
+                      >
+                        +62 821 6999 4505
+                      </a>
+                      <a
+                        href="mailto:anggatriandayani@gmail.com"
+                        className="block text-muted-foreground hover:text-foreground transition-colors duration-300"
+                      >
+                        anggatriandayani@gmail.com
+                      </a>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <h4 className="text-minimal text-muted-foreground mb-4">STUDIO</h4>
@@ -87,7 +106,7 @@ const ContactSection = () => {
                   Setiap proyek kami mulai dari mendengarkan, memahami visi Anda, dan menerjemahkannya menjadi ruang yang melebihi ekspektasi.
                 </p>
                 <a
-                  href="https://wa.me/6281271172937?text=Halo%20ARCH%20STUDIO%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek."
+                  href="https://wa.me/628116314114?text=Halo%20MORNING%20ARCT%20STUDIO%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-clay text-accent-foreground px-8 py-4 text-minimal hover:bg-clay/90 transition-all shadow-warm hover:-translate-y-0.5"
